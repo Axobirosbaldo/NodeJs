@@ -1,5 +1,5 @@
 const express = require('express');
-const nunjucks = required('nunjucks');
+const nunjucks = require('nunjucks');
 
 const app = express();
 
@@ -12,7 +12,7 @@ nunjucks.configure('views', {
 app.set('view engine', 'njk');
 
 app.get('/', (req, res) => {
-    return res.send(`Bem-vindo`);
+    return res.render('list', { name: 'Pedro' });
 });
 
 app.listen(3000);
