@@ -16,4 +16,8 @@ app.get('/nome/:name', (req, res) => {
     });
 });
 
+app.get('/nome', (req, res) => {
+    return res.send(`Bem-vindo, ${req.query.name}`);
+});
+
 app.listen(3000);
