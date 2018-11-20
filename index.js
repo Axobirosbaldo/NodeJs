@@ -4,6 +4,13 @@ const app = express();
 
 app.get('/', (req, res) => {
     return res.send('Hello World');
+const logMiddleware = (req, res, next) => {
+    console.log(
+        `HOST: ${req.headers.host} | URL: ${req.url} | METHOD: ${req.method}`
+    );
+
+    return next();
+};
 });
 
 app.get('/login', (req, res) => {
