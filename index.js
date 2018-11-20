@@ -10,7 +10,9 @@ const logMiddleware = (req, res, next) => {
     return next();
 };
 
-app.get('/', logMiddleware, (req, res) => {
+app.use(logMiddleware);
+
+app.get('/', (req, res) => {
     return res.send(`Bem-vindo, ${req.query.name}`);
 });
 
